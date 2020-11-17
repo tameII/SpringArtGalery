@@ -30,6 +30,7 @@ public class PaintingDAO implements IArtDAO{
 
     @Override
     public void add(Painting art) {
+        art.setId(painting.size());
         this.painting.add(art);
     }
 }
