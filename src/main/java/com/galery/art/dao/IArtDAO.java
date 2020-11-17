@@ -7,8 +7,8 @@ import java.util.List;
 
 public interface IArtDAO {
 
-    public List<Painting> findAll();
-    public Painting findById(int id);
+    public List<IArt> findAll();
+    public IArt findById(int id);
     public void add(Painting art);
 
 }

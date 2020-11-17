@@ -1,6 +1,6 @@
 package com.galery.art.model;
 
-public class Painting{
+public class Painting implements IArt{
     private int id;
     private String TYPE = "painting";
     private String title;
@@ -57,5 +57,21 @@ public class Painting{
 
     public String getType() {
         return TYPE;
+    }
+
+    /**
+     * @warning i want to get rid of this, it's not cool
+     * @param TYPE
+     */
+    public void setTYPE(String TYPE) {
+        this.TYPE = TYPE;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public class PaintingDAO implements IArtDAO{
-    private ArrayList<Painting> painting;
+    private ArrayList<IArt> painting;
 
     public PaintingDAO(){
         painting = new ArrayList<>();
@@ -19,12 +19,12 @@ public class PaintingDAO implements IArtDAO{
     }
 
     @Override
-    public List<Painting> findAll() {
+    public List<IArt> findAll() {
         return this.painting;
     }
 
     @Override
-    public Painting findById(int id) {
+    public IArt findById(int id) {
         return this.painting.get(id);
     }
 
@@ -33,4 +33,6 @@ public class PaintingDAO implements IArtDAO{
         art.setId(painting.size());
         this.painting.add(art);
     }
+
+
 }

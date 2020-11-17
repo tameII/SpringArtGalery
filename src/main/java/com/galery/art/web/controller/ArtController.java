@@ -1,6 +1,7 @@
 package com.galery.art.web.controller;
 
 import com.galery.art.dao.IArtDAO;
+import com.galery.art.model.IArt;
 import com.galery.art.model.Painting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,17 +15,17 @@ public class ArtController {
     private IArtDAO dao;
 
     @GetMapping(value = "/art")
-    public List<Painting> getAll(){
+    public List<IArt> getAll(){
         return dao.findAll();
     }
 
     @GetMapping(value="/art/{id}")
-    public Painting getPainting(@PathVariable int id){
+    public IArt getPainting(@PathVariable int id){
         return dao.findById(id);
     }
 
     @GetMapping("/art/get")
-    public Painting artGet(@RequestParam int id) {
+    public IArt artGet(@RequestParam int id) {
         return dao.findById(id);
     }
 
@@ -32,5 +33,6 @@ public class ArtController {
     public void addPainting(@RequestBody Painting painting){
         dao.add(painting);
     }
+
 
 }
